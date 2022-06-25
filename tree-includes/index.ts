@@ -9,18 +9,18 @@ D   E   F
 */
 
 // Write a function that takes in the root of a binary tree. The function should return an array containing all values of the tree in depth-first order
-const f: BinaryTreeNode = { id: 'f' };
-const e: BinaryTreeNode = { id: 'e' };
-const d: BinaryTreeNode = { id: 'd' };
-const b: BinaryTreeNode = { id: 'b', left: d, right: e };
-const c: BinaryTreeNode = { id: 'c', right: f };
-const a: BinaryTreeNode = { id: 'a', left: b, right: c };
+const f: BinaryTreeNode<string> = { id: 'f' };
+const e: BinaryTreeNode<string> = { id: 'e' };
+const d: BinaryTreeNode<string> = { id: 'd' };
+const b: BinaryTreeNode<string> = { id: 'b', left: d, right: e };
+const c: BinaryTreeNode<string> = { id: 'c', right: f };
+const a: BinaryTreeNode<string> = { id: 'a', left: b, right: c };
 
-function breadthFirstIncludes(root: BinaryTreeNode | null, targetId: string): boolean {
+function breadthFirstIncludes(root: BinaryTreeNode<string> | null, targetId: string): boolean {
   if (!root) {
     return false;
   }
-  const queue: BinaryTreeNode[] = [a];
+  const queue: BinaryTreeNode<string>[] = [a];
 
   while (queue.length) {
     const current = queue.shift();
@@ -39,11 +39,11 @@ function breadthFirstIncludes(root: BinaryTreeNode | null, targetId: string): bo
 
 let result = breadthFirstIncludes(a, 'c');
 
-function depthFirstIncludes(root: BinaryTreeNode | null, targetId: string): boolean {
+function depthFirstIncludes(root: BinaryTreeNode<string> | null, targetId: string): boolean {
   if (!root) {
     return false;
   }
-  const stack: BinaryTreeNode[] = [a];
+  const stack: BinaryTreeNode<string>[] = [a];
 
   while (stack.length) {
     const current = stack.pop();
@@ -62,7 +62,7 @@ function depthFirstIncludes(root: BinaryTreeNode | null, targetId: string): bool
 
 result = depthFirstIncludes(a, 'x');
 
-function depthFirstRecursiveIncludes(root: BinaryTreeNode | null, targetId: string): boolean {
+function depthFirstRecursiveIncludes(root: BinaryTreeNode<string> | null, targetId: string): boolean {
   if (!root) {
     return false;
   }

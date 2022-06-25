@@ -1,5 +1,5 @@
-interface BinaryTreeNode {
-  id: string;
-  left?: BinaryTreeNode;
-  right?: BinaryTreeNode;
+interface BinaryTreeNode<T> {
+  id: T;
+  left?: BinaryTreeNode<T>;
+  right?: BinaryTreeNode<T>;
 }
