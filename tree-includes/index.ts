@@ -6,9 +6,11 @@ The idea is to find any value within the tree, either using Depth or Breadth fir
  / \   \
 D   E   F
 
+includes('A') => true
+includes('X') => false
+
 */
 
-// Write a function that takes in the root of a binary tree. The function should return an array containing all values of the tree in depth-first order
 const f: BinaryTreeNode<string> = { id: 'f' };
 const e: BinaryTreeNode<string> = { id: 'e' };
 const d: BinaryTreeNode<string> = { id: 'd' };
@@ -62,7 +64,10 @@ function depthFirstIncludes(root: BinaryTreeNode<string> | null, targetId: strin
 
 result = depthFirstIncludes(a, 'x');
 
-function depthFirstRecursiveIncludes(root: BinaryTreeNode<string> | null, targetId: string): boolean {
+function depthFirstRecursiveIncludes(
+  root: BinaryTreeNode<string> | null,
+  targetId: string
+): boolean {
   if (!root) {
     return false;
   }

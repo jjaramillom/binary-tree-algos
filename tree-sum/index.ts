@@ -6,6 +6,8 @@ The idea is to return the sum of the values in the tree
  / \   \
 4   2   1
 
+sum() => 25
+
 */
 
 // Write a function that takes in the root of a binary tree. The function should return an array containing all values of the tree in depth-first order
